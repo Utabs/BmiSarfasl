@@ -43,8 +43,8 @@ import org.springframework.orm.jpa.vendor.HibernateJpaVendorAdapter;
  private static final Integer HIBERNATE_MAX_STATEMENTS = 0;
  private static final Integer HIBERNATE_MIN_POOL_SIZE = 5;
 
- private static final String HIBERNATE_USER = "amin";
- private static final String HIBERNATE_PASSWORD = "myjava123";
+ private static final String HIBERNATE_USER = "test";
+ private static final String HIBERNATE_PASSWORD = "test";
 
  //@Autowired
 // private Environment environment;
