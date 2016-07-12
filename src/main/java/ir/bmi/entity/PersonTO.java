@@ -1,7 +1,7 @@
 package ir.bmi.entity;
 
 import javax.persistence.*;
-import javax.transaction.Transactional;
+import org.springframework.transaction.annotation.Transactional;
 import java.io.Serializable;
 
 /**

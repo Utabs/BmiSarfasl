@@ -5,6 +5,7 @@ import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
 
 import javax.persistence.EntityManager;
+import javax.persistence.EntityManagerFactory;
 import javax.persistence.PersistenceContext;
 import javax.persistence.Query;
 import java.util.List;
@@ -14,12 +15,11 @@ import java.util.List;
  */
 @Repository
 
- public class PersonDaoImpl extends BaseDaoImpl<PersonTO> implements PersonDao {
+public class PersonDaoImpl extends BaseDaoImpl<PersonTO> implements PersonDao {
 
-    @PersistenceContext
-     EntityManager entityManager;
 
     @Override
+    @Transactional
     public PersonTO create(PersonTO personTO) {
         System.out.println("In personDaoImpl ..");
         return super.create(personTO);
@@ -41,7 +41,7 @@ import java.util.List;
     }
 
     @Override
-    @SuppressWarnings({ "unchecked", "rawtypes" })
+    @SuppressWarnings({"unchecked", "rawtypes"})
     public List<PersonTO> findAll() {
 
         return null;

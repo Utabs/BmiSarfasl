@@ -6,6 +6,7 @@ import ir.bmi.entity.PersonTO;
 import org.springframework.transaction.annotation.Transactional;
 
 import javax.persistence.EntityManager;
+import javax.persistence.EntityManagerFactory;
 import javax.persistence.PersistenceContext;
 import javax.persistence.criteria.CriteriaBuilder;
 import javax.persistence.criteria.CriteriaQuery;
@@ -22,7 +23,8 @@ import java.util.List;
 public class BaseDaoImpl<T> implements BaseDao<T> {
     private Class<T> type;
     @PersistenceContext
-     EntityManager entityManager;
+    private EntityManager entityManager;
+
 
     public BaseDaoImpl() {
         Type t = getClass().getGenericSuperclass();
@@ -31,14 +33,17 @@ public class BaseDaoImpl<T> implements BaseDao<T> {
     }
 
     @Override
+    @Transactional
      public T create(final T t) {
-        entityManager.getTransaction().begin();
+
+      //  entityManager.getTransaction().begin();
         System.out.println("In BaseDaoImpl ...");
         PersonTO personTO= (PersonTO) t;
         System.out.println(((PersonTO) t).getFamily());
-        this.entityManager.persist(t);
+        entityManager.persist(t);
 //        entityManager.getTransaction().commit();
-        entityManager.close();
+  //      entityManager.close();
+        System.out.println("In BaseDaoImpl after ...");
         return t;
     }
 

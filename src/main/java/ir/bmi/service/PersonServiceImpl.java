@@ -19,18 +19,16 @@ public class PersonServiceImpl implements PersonService {
     @Autowired
     private PersonDao personDao;
 
-
     @Override
-    public PersonTO create(PersonTO personTO) throws Exception {
-        System.out.println("in service..");
-        return personDao.create(personTO);
-    }
+    public PersonTO inserted(PersonTO personTO) throws Exception {
+            System.out.println("in service..");
+            return personDao.create(personTO);
+        }
 
     @Override
     public List<PersonTO> select() throws Exception {
         return null;
     }
-
 
     @Override
     public PersonTO find(Long Id) {

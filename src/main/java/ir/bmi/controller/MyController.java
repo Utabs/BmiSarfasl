@@ -18,13 +18,12 @@ import java.util.List;
 public class MyController {
 
     @Autowired
-    PersonService personService;
+    private PersonService personService;
 
     @RequestMapping(value = "/")
     public String hello() {
         return "hello";
     }
-
 
     // ba method delete moshkel dare bayad dorost beshe......
     @RequestMapping(value = "/del", method = RequestMethod.DELETE)
@@ -48,7 +47,7 @@ public class MyController {
             PersonTO personTO =new PersonTO();
 
             System.out.println("Controller...");
-            personTO=personService.create(personTO);
+            personTO=personService.inserted(personTO);
             System.out.println("after reg In controller"+personTO.getFamily());
             return null;
         } catch (Exception e) {
@@ -56,16 +55,15 @@ public class MyController {
             return null;
         }
     }
-
-    @RequestMapping(value = "/getp", method = RequestMethod.GET)
+     @RequestMapping(value = "/getp", method = RequestMethod.GET)
     public String getPersons() {
         try {
             System.out.println("in controller method ..");
             PersonTO personTO=new PersonTO();
             personTO.setName("aaa");
             personTO.setFamily("bbb");
-        //    personTO.setId(1);
-            System.out.println( personService.create(personTO));
+            personTO.setId(1);
+            System.out.println( personService.inserted(personTO));
             System.out.println("After Controller...");
             return null;
         } catch (Exception e) {
