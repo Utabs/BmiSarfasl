@@ -3,8 +3,7 @@ package ir.bmi.service;
 import ir.bmi.entity.PersonTO;
 import org.springframework.stereotype.Service;
 
-import javax.transaction.Transactional;
-import java.util.List;
+ import java.util.List;
 
 /**
  * Created by utab on 7/7/2016.

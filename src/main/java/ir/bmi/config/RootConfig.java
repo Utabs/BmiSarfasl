@@ -26,13 +26,13 @@ import org.springframework.orm.jpa.vendor.HibernateJpaVendorAdapter;
  private static final String HIBERNATE_SQL_FORMAT_VALUE = "true";
 
  private static final String HIBERNATE_HBM2DDL_AUTO = "hibernate.hbm2ddl.auto";
- private static final String HIBERNATE_HBM2DDL_AUTO_VALUE = "create-drop";
+ private static final String HIBERNATE_HBM2DDL_AUTO_VALUE = "create";
 
- private static final String HIBERNATE_DTIVER_CLASS = "oracle.jdbc.driver.OracleDriver";
- private static final String HIBERNATE_JDBC_URL = "jdbc:oracle:thin:@//localhost:1521/orcl";
+ private static final String HIBERNATE_DTIVER_CLASS = "com.mysql.jdbc.Driver";
+ private static final String HIBERNATE_JDBC_URL = "jdbc:mysql://localhost:3306/test";
 
  private static final String HIBERNATE_DIALECT = "hibernate.dialect";
- private static final String HIBERNATE_DIALECT_VALUE = "org.hibernate.dialect.Oracle10gDialect";
+ private static final String HIBERNATE_DIALECT_VALUE = "org.hibernate.dialect.MySQLDialect";
 
 
 // private static final String HIBERNATE_MAX_FETCH_DEPTH = "hibernate.max_fetch_depth";
@@ -43,8 +43,8 @@ import org.springframework.orm.jpa.vendor.HibernateJpaVendorAdapter;
  private static final Integer HIBERNATE_MAX_STATEMENTS = 0;
  private static final Integer HIBERNATE_MIN_POOL_SIZE = 5;
 
- private static final String HIBERNATE_USER = "amin";
- private static final String HIBERNATE_PASSWORD = "myjava123";
+ private static final String HIBERNATE_USER = "root";
+ private static final String HIBERNATE_PASSWORD = "123";
 
  //@Autowired
 // private Environment environment;
