@@ -14,10 +14,10 @@ public class PersonTO implements Serializable {
     @GeneratedValue(strategy= GenerationType.AUTO)
     private int id;
     @Basic
-    @Column(name = "NAME",columnDefinition = "VARCHAR2(10)")
+    @Column(name = "NAME")
     private String name;
     @Basic
-    @Column(name="FAMILY",columnDefinition = "VARCHAR2(20)")
+    @Column(name="FAMILY")
     private String family;
 
     public PersonTO(int i, String name, String family) {
